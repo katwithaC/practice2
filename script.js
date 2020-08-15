@@ -21,3 +21,20 @@ myImage.onclick = function() {
       myImage.setAttribute('src','assets/margarita.jpg');
     }
 }
+
+let myButton = document.querySelector('button');
+let myHeading = document.querySelector('h1');
+
+function setUserName() {
+  let myName = prompt('Please enter your name.');
+  if(!myName) {
+    setUserName();
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = 'Welcome to the page, ' + myName;
+  }
+}
+
+myButton.onclick = function() {
+  setUserName();
+}
